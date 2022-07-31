@@ -10,10 +10,10 @@ public class Pattern_03 {
         int row = 1;
         int stars = 5;
         while(row <= n) {
-            int col = 1;
-            while(col <= stars) {
+            int i = 1;
+            while(i <= stars) {
                 System.out.print("* ");
-                col++;
+                i++;
             }
 
             row++;

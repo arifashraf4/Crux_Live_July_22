@@ -19,7 +19,7 @@ public class Pattern_21 {
         int n = sc.nextInt();
 
         int row = 1;
-        int space = 2*n -1;
+        int space = 2 * n - 3;
         int stars = 1;
 
         while(row <= n) {
@@ -37,6 +37,9 @@ public class Pattern_21 {
 
             int k = 1;
             while(k <= stars) {
+                if(k==n) {
+                    break;
+                }
                 System.out.print("* ");
                 k++;
             }
