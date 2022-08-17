@@ -8,7 +8,7 @@ public class Pattern_10 {
         int n = sc.nextInt();
 
         int row = 1;
-        int stars = 9;
+        int stars = 2*n - 1;
         int space = 0;
 
         while(row <= n) {
