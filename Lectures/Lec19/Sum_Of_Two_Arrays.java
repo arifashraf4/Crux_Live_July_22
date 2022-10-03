@@ -1,12 +1,24 @@
 package Lec19;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Sum_Of_Two_Arrays {
     public static void main(String[] args) {
-        int[] arr = { 1, 5};
-        int[] arr1 = { 2, 0};
-        sumOfTwoArrays(arr, arr1);
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr1 = new int[n];
+        for (int i = 0; i < arr1.length; i++) {
+            arr1[i] = sc.nextInt();
+        }
+        int m = sc.nextInt();
+        int[] arr2 = new int[m];
+        for (int i = 0; i < arr2.length; i++) {
+            arr2[i] = sc.nextInt();
+        }
+//        int[] arr1 = { 1, 5};
+//        int[] arr2 = { 2, 0};
+        sumOfTwoArrays(arr1, arr2);
 
     }
 
