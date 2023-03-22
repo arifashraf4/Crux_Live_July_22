@@ -1,12 +1,26 @@
 package Contest01;
 
+import java.util.Scanner;
+
 public class Maximum_Circular_Sum {
     public static void main(String[] args) {
-        int[] arr = {8, -8, 9, -9, 10, -11, 12};
-        System.out.println(maxCircularSum(arr));
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t > 0) {
+            int n = sc.nextInt();
+            int[] arr = new int[n];
+
+            for(int i = 0; i < arr.length; i++) {
+                arr[i] = sc.nextInt();
+            }
+
+            maxCircularSum(arr);
+
+            t--;
+        }
     }
 
-    public static int maxCircularSum(int[] arr) {
+    public static void maxCircularSum(int[] arr) {
         int sum = 0;
         int ans = Integer.MIN_VALUE;
 
@@ -25,14 +39,24 @@ public class Maximum_Circular_Sum {
         }
 
         int negTotalSum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            negTotalSum += -(arr[i]);
+        int ans2 = Integer.MIN_VALUE;
+        int[] arr2 = new int[arr.length];
+        for (int i = 0; i < arr2.length; i++) {
+            arr2[i] = -(arr[i]);
         }
 
-        int difference = totalSum - negTotalSum;
+        for (int i = 0; i < arr2.length; i++) {
+            negTotalSum += arr2[i];
+            ans2 = Math.max(ans2, negTotalSum);
 
+            if (negTotalSum < 0) {
+                negTotalSum = 0;
+            }
+        }
+
+        int difference = totalSum + ans2;
         int circularSum = Math.max(ans, difference);
 
-        return circularSum;
+        System.out.println(circularSum);
     }
 }
